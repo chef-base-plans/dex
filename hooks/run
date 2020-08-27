@@ -1,8 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 exec 2>&1
-
-while true; do
-  echo "Sleeping ..."
-  sleep 10
-done
+exec dex serve {{pkg.svc_config_path}}/config.yml
