@@ -42,6 +42,7 @@ do_unpack() {
 }
 
 do_build() {
+  cd "$GOPATH/src/$gopkg"
   go build --ldflags "${GO_LDFLAGS}" -o "$pkg_prefix/bin/dex" "$gopkg/cmd/dex"
 }
 
