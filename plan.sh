@@ -2,7 +2,7 @@ gopkg="github.com/dexidp/dex"
 pkg_name=dex
 pkg_description="OpenID Connect Identity (OIDC) and OAuth 2.0 Provider with Pluggable Connectors"
 pkg_origin=core
-pkg_version="2.24.0"
+pkg_version="2.28.0"
 pkg_maintainer="Chef Software Inc. <support@chef.io>"
 pkg_license=("Apache-2.0")
 pkg_source="https://$gopkg"
@@ -42,6 +42,7 @@ do_unpack() {
 }
 
 do_build() {
+  cd "$GOPATH/src/$gopkg"
   go build --ldflags "${GO_LDFLAGS}" -o "$pkg_prefix/bin/dex" "$gopkg/cmd/dex"
 }
 
