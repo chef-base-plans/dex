@@ -25,7 +25,7 @@ control 'core-plans-dex-works' do
     describe command("#{command_full_path} version") do
       its('exit_status') { should eq 0 }
       its('stdout') { should_not be_empty }
-      its('stdout') { should match /Dex Version:\s+v#{plan_pkg_version}\nGo Version: go1.15\nGo OS\/ARCH: linux amd64\n/}
+      its('stdout') { should match /Dex Version:\s+v#{plan_pkg_version}/}
       its('stderr') { should be_empty }
     end
   end
